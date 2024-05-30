@@ -86,14 +86,14 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
   
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
-      AIMessage(content="Hello! I'm a SQL assistant. Ask me anything about your database."),
+      AIMessage(content="¡Hola! Soy asistente de SQL. Pregúntame cualquier cosa sobre tu base de datos."),
     ]
 
 load_dotenv()
 
-st.set_page_config(page_title="Chat with MySQL", page_icon=":speech_balloon:")
+st.set_page_config(page_title="Chat Origen Medios", page_icon=":speech_balloon:")
 
-st.title("Chat with MySQL")
+st.title("Chat IA")
 
 with st.sidebar:
     st.subheader("Settings")
@@ -103,10 +103,10 @@ with st.sidebar:
     st.text_input("Port", value="25060", key="Port")
     st.text_input("User", value="doadmin", key="User")
     st.text_input("Password", type="password", value="AVNS_Vfn884XHZhbBRmGnXLo", key="Password")
-    st.text_input("Database", value="AdsMetricks", key="Database")
+    st.text_input("Database", value="OrigenMedios", key="Database")
     
-    if st.button("Connect"):
-        with st.spinner("Connecting to database..."):
+    if st.button("Conectar"):
+        with st.spinner("Conectando a tu base de datos..."):
             db = init_database(
                 st.session_state["User"],
                 st.session_state["Password"],
@@ -115,7 +115,7 @@ with st.sidebar:
                 st.session_state["Database"]
             )
             st.session_state.db = db
-            st.success("Connected to database!")
+            st.success("Conectado a OrigenMedios DDBB!")
     
 for message in st.session_state.chat_history:
     if isinstance(message, AIMessage):
@@ -125,7 +125,7 @@ for message in st.session_state.chat_history:
         with st.chat_message("Human"):
             st.markdown(message.content)
 
-user_query = st.chat_input("Type a message...")
+user_query = st.chat_input("Escribe tu Pregunta...")
 if user_query is not None and user_query.strip() != "":
     st.session_state.chat_history.append(HumanMessage(content=user_query))
     
