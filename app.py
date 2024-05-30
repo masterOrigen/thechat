@@ -96,8 +96,8 @@ st.set_page_config(page_title="Chat Origen Medios", page_icon=":speech_balloon:"
 st.title("Chat IA")
 
 with st.sidebar:
-    st.subheader("Settings")
-    st.write("This is a simple chat application using MySQL. Connect to the database and start chatting.")
+    st.subheader("Configuración")
+    st.write("Esta es una aplicación de chat que utiliza MySQL. Conéctate a la base de datos y comienza a chatear.")
     
     st.text_input("Host", value="chatgpt-do-user-3243287-0.c.db.ondigitalocean.com", key="Host")
     st.text_input("Port", value="25060", key="Port")
